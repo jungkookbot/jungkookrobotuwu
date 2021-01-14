@@ -77,7 +77,7 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-SAITAMA_IMG = "https://telegra.ph/file/f50105381cc732dfb1f1e.jpg"
+SAITAMA_IMG = "https://telegra.ph/file/8d93231f19ee1f51eb72d.mp4"
 
 DONATE_STRING = """donate to the original writer of the Base code, Paul
 There are two ways of supporting him; [PayPal](paypal.me/PaulSonOfLars), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
@@ -185,10 +185,10 @@ def start(update: Update, context: CallbackContext):
                           [
                               InlineKeyboardButton(
                               text="🥰Support Group🥰",
-                              url=f"https://t.me/IGRISBOTSUPPORT"),
+                              url=f"https://t.me/jungkooksupportgroup"),
                               InlineKeyboardButton(
                               text="💕Updates Channel💕",
-                              url="https://t.me/IGRISROBOT_SUPPORT")
+                              url="https://t.me/JungkookuwuUpdates", 
                           ], 
                           [
                               InlineKeyboardButton(
