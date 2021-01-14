@@ -188,7 +188,7 @@ def start(update: Update, context: CallbackContext):
                               url=f"https://t.me/jungkooksupportgroup"),
                               InlineKeyboardButton(
                               text="💕Updates Channel💕",
-                              url="https://t.me/JungkookuwuUpdates", 
+                              url="https://t.me/JungkookuwuUpdates") 
                           ], 
                           [
                               InlineKeyboardButton(
