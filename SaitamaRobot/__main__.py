@@ -193,6 +193,8 @@ def start(update: Update, context: CallbackContext):
                           [
                               InlineKeyboardButton(
                               text="💝Help💝", 
+                              url="https://t.me/jungkookrobot?start=help")
+                          ]])) 
                               
     else:
         update.effective_message.reply_text(
