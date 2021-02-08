@@ -77,10 +77,10 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-SAITAMA_IMG = "https://wallpapercave.com/wp/wp4634661.jpg"
+SAITAMA_IMG = "https://telegra.ph/file/b0c6f4c732f7886b730b1.jpg"
 
-DONATE_STRING = """donate to the original writer of the Base code, Paul
-There are two ways of supporting him; [PayPal](paypal.me/PaulSonOfLars), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
+DONATE_STRING = """Heya, glad to hear you want to donate!
+ You can support the project by contacting @NameHiddenz. Supporting isnt always financial!  Those who cannot provide monetary support are welcome to help us develop the bot at @JungkookSupportGroup."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -178,21 +178,21 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(                   
                           [[
                               InlineKeyboardButton(
-                              text="💜Add JungKook To Your Group❤", 
+                              text="🕊️Add Jungkookᵁʷᵁ To Your Group", 
                               url="t.me/{}?startgroup=true".format(
                                   context.bot.username))
                           ], 
                           [
                               InlineKeyboardButton(
-                              text="🥰Support Group🥰",
+                              text="🛠️Support Group",
                               url=f"https://t.me/jungkooksupportgroup"),
                               InlineKeyboardButton(
-                              text="💕Updates Channel💕",
+                              text="🔔Updates Channel",
                               url="https://t.me/JungkookuwuUpdates") 
                           ], 
                           [
                               InlineKeyboardButton(
-                              text="💝Help💝", 
+                              text="👀Help", 
                               url="https://t.me/jungkookrobot?start=help")
                           ]])) 
                               
