@@ -52,7 +52,7 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 *Hi {}*, my name is *Jungkookᵁʷᵁ!*
-I am an K-POP themed group management bot.
+I am a K-POP themed group management bot.
 Build by army for army, I specialize in managing KPOP and similar themed groups.
 You can find my list of available commands with /help.
 """
