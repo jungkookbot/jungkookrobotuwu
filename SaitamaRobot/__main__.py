@@ -51,15 +51,15 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hello {}, I Am Jungkook💜
-The youngest Member of BTS💜
-I will help u manage your groups well.
-Use /help to know my commands
+*Hi {}*, my name is *Jungkookᵁʷᵁ!*
+I am an K-POP themed group management bot.
+Build by army for army, I specialize in managing KPOP and similar themed groups.
+You can find my list of available commands with /help.
 """
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
-I Am youngest Member of BTS,I will help you manage your groups! Have a look at the following for an idea of some of \
+I will help you manage your groups! Have a look at the following for an idea of some of \
 the things I can help you with.
 
 *Main* commands available:
@@ -77,7 +77,7 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-SAITAMA_IMG = "https://telegra.ph/file/8d93231f19ee1f51eb72d.mp4"
+SAITAMA_IMG = "https://telegra.ph/file/0d782f9dbd329e51a3cc5.jpg"
 
 DONATE_STRING = """donate to the original writer of the Base code, Paul
 There are two ways of supporting him; [PayPal](paypal.me/PaulSonOfLars), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
