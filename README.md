@@ -5,7 +5,7 @@
 
 A modular Telegram Python bot running on python3 with a sqlalchemy database.
 
-Originally a Marie fork, JungKook evolved further and was built to be more robust and more dedicated to Anime Chats. 
+Originally a Marie fork, JungKook evolved further and was built to be more robust and more dedicated to K-POP Chats. 
 
 Can be found on telegram as [JungKookRobot](https://t.me/JungKookRobot).
 
