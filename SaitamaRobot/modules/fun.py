@@ -12,9 +12,9 @@ from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 from SaitamaRobot.modules.helper_funcs.chat_status import (is_user_admin)
 from SaitamaRobot.modules.helper_funcs.extraction import extract_user
 
-GIF_ID = 'CgACAgUAAx0EVmwfqQACElhfo3yZv1njCC11INcQSAi4UlN8vwACqwADg_8wVeGSv41OYU6zHgQ'
+GIF_ID = 'BAADBAADGwIAAmRw5VJX9l2EYluvNAI'
 
-PHOTO = 'https://i.imgur.com/UjiCJhZ.jpg'
+PHOTO = 'https://telegra.ph/file/0d782f9dbd329e51a3cc5.jpg'
 
 @run_async
 def runs(update: Update, context: CallbackContext):
