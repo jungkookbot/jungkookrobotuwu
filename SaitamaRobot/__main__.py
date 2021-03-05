@@ -234,7 +234,6 @@ def error_callback(update: Update, context: CallbackContext):
 
 
 @run_async
-@typing_action
 def help_button(update, context):
     query = update.callback_query
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
@@ -290,7 +289,6 @@ def help_button(update, context):
 
 
 @run_async
-@typing_action
 def get_help(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
     args = update.effective_message.text.split(None, 1)
@@ -356,7 +354,6 @@ def send_settings(chat_id, user_id, user=False):
 
 
 @run_async
-@typing_action
 def settings_button(update: Update, context: CallbackContext):
     query = update.callback_query
     user = update.effective_user
@@ -455,7 +452,6 @@ def get_settings(update: Update, context: CallbackContext):
 
 
 @run_async
-@typing_action
 def donate(update: Update, context: CallbackContext):
     user = update.effective_message.from_user
     chat = update.effective_chat  # type: Optional[Chat]
