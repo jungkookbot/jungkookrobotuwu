@@ -9,10 +9,12 @@ from SaitamaRobot.modules.log_channel import loggable
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, Update
 from telegram.utils.helpers import mention_html
 from telegram.error import BadRequest
+from SaitamaRobot.modules.helper_funcs.alternate import typing_action
 
 @loggable
 @user_admin
 @run_async
+@typing_action
 def approve(update, context):
     message = update.effective_message
     chat_title = message.chat.title
@@ -55,6 +57,7 @@ def approve(update, context):
 @loggable
 @user_admin
 @run_async
+@typing_action
 def disapprove(update, context):
     message = update.effective_message
     chat_title = message.chat.title
@@ -90,6 +93,7 @@ def disapprove(update, context):
     return log_message
 @user_admin
 @run_async
+@typing_action                           
 def approved(update, context):
     message = update.effective_message
     chat_title = message.chat.title
@@ -106,6 +110,7 @@ def approved(update, context):
         message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
 @user_admin
 @run_async
+@typing_action
 def approval(update, context):
     message = update.effective_message
     chat = update.effective_chat
@@ -126,11 +131,12 @@ def approval(update, context):
             f"{member.user['first_name']} is not an approved user. They are affected by normal commands."
         )
 @run_async
+@typing_action
 def unapproveall(update: Update, context: CallbackContext):
     chat = update.effective_chat
     user = update.effective_user
     member = chat.get_member(user.id)
-    if member.status != "creator" and user.id not in SUDO_USERS:
+    if member.status != "creator" and user.id not in DRAGONS:
         update.effective_message.reply_text(
             "Only the chat owner can unapprove all users at once."
         )
@@ -162,7 +168,7 @@ def unapproveall_btn(update: Update, context: CallbackContext):
     message = update.effective_message
     member = chat.get_member(query.from_user.id)
     if query.data == "unapproveall_user":
-        if member.status == "creator" or query.from_user.id in SUDO_USERS:
+        if member.status == "creator" or query.from_user.id in DRAGONS:
             approved_users = sql.list_approved(chat.id)
             users = [int(i.user_id) for i in approved_users]
             for user_id in users:
@@ -172,7 +178,7 @@ def unapproveall_btn(update: Update, context: CallbackContext):
         if member.status == "member":
             query.answer("You need to be admin to do this.")
     elif query.data == "unapproveall_cancel":
-        if member.status == "creator" or query.from_user.id in SUDO_USERS:
+        if member.status == "creator" or query.from_user.id in DRAGONS:
             message.edit_text("Removing of all approved users has been cancelled.")
             return ""
         if member.status == "administrator":
