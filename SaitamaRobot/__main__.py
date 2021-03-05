@@ -20,7 +20,7 @@ from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
                           Filters, MessageHandler)
 from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
-
+from SaitamaRobot.modules.helper_funcs.alternate import typing_action
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -80,7 +80,7 @@ And the following:
 SAITAMA_IMG = "https://telegra.ph/file/e596740130559f9e50855.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project by contacting @NameHiddenz. Supporting isnt always financial!  Those who cannot provide monetary support are welcome to help us develop the bot at @JungkookSupportGroup."""
+ You can support the project by contacting @DrunkenMonkeyX. Supporting isnt always financial!  Those who cannot provide monetary support are welcome to help us develop the bot at @JungkookSupportGroup."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -149,6 +149,7 @@ def test(update: Update, context: CallbackContext):
     print(update.effective_message)
 
 @run_async
+@typing_action
 def start(update: Update, context: CallbackContext):
     args = context.args
     uptime = get_readable_time((time.time() - StartTime))
@@ -193,7 +194,7 @@ def start(update: Update, context: CallbackContext):
                           [
                               InlineKeyboardButton(
                               text="👀 Help", 
-                              url="https://t.me/jungkookrobot?start=help")
+                              callback_data="help_back")
                           ]])) 
                               
     else:
@@ -233,6 +234,7 @@ def error_callback(update: Update, context: CallbackContext):
 
 
 @run_async
+@typing_action
 def help_button(update, context):
     query = update.callback_query
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
@@ -288,6 +290,7 @@ def help_button(update, context):
 
 
 @run_async
+@typing_action
 def get_help(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
     args = update.effective_message.text.split(None, 1)
@@ -353,6 +356,7 @@ def send_settings(chat_id, user_id, user=False):
 
 
 @run_async
+@typing_action
 def settings_button(update: Update, context: CallbackContext):
     query = update.callback_query
     user = update.effective_user
@@ -451,6 +455,7 @@ def get_settings(update: Update, context: CallbackContext):
 
 
 @run_async
+@typing_action
 def donate(update: Update, context: CallbackContext):
     user = update.effective_message.from_user
     chat = update.effective_chat  # type: Optional[Chat]
