@@ -13,7 +13,6 @@ import SaitamaRobot.modules.sql.last_fm_sql as sql
 from SaitamaRobot.modules.helper_funcs.alternate import typing_action
 
 @run_async
-@typing_action
 def set_user(update: Update, context: CallbackContext):
     args = context.args
     msg = update.effective_message
@@ -28,7 +27,6 @@ def set_user(update: Update, context: CallbackContext):
         )
 
 @run_async
-@typing_action
 def clear_user(update: Update, _):
     user = update.effective_user.id
     sql.set_user(user, "")
@@ -37,7 +35,6 @@ def clear_user(update: Update, _):
     )
 
 @run_async
-@typing_action
 def last_fm(update: Update, _):
     msg = update.effective_message
     user = update.effective_user.first_name
