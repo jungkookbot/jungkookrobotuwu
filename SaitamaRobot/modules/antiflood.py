@@ -26,7 +26,6 @@ FLOOD_GROUP = 3
 
 @run_async
 @loggable
-@typing_action
 def check_flood(update, context) -> str:
     user = update.effective_user  # type: Optional[User]
     chat = update.effective_chat  # type: Optional[Chat]
@@ -124,7 +123,6 @@ def flood_button(update: Update, context: CallbackContext):
 @run_async
 @user_admin
 @loggable
-@typing_action
 def set_flood(update, context) -> str:
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
@@ -202,7 +200,6 @@ def set_flood(update, context) -> str:
 
 
 @run_async
-@typing_action
 def flood(update, context):
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
@@ -240,7 +237,6 @@ def flood(update, context):
 
 @run_async
 @user_admin
-@typing_action
 def set_flood_mode(update, context):
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
