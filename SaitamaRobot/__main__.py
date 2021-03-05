@@ -171,28 +171,28 @@ def start(update: Update, context: CallbackContext):
 
         else:
             first_name = update.effective_user.first_name
-            update.effective_message.reply_animation(
+            update.effective_message.reply_photo(
                 SAITAMA_IMG,
                 caption=PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(context.bot.first_name), OWNER_ID),
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(                   
                           [[
                               InlineKeyboardButton(
-                              text="🕊️Add Jungkookᵁʷᵁ To Your Group", 
+                              text="🕊️ Add Jungkookᵁʷᵁ To Your Group", 
                               url="t.me/{}?startgroup=true".format(
                                   context.bot.username))
                           ], 
                           [
                               InlineKeyboardButton(
-                              text="🛠️Support Group",
+                              text="🛠️ Support Group",
                               url=f"https://t.me/jungkooksupportgroup"),
                               InlineKeyboardButton(
-                              text="🔔Updates Channel",
+                              text="🔔 Updates Channel",
                               url="https://t.me/JungkookuwuUpdates") 
                           ], 
                           [
                               InlineKeyboardButton(
-                              text="👀Help", 
+                              text="👀 Help", 
                               url="https://t.me/jungkookrobot?start=help")
                           ]])) 
                               
