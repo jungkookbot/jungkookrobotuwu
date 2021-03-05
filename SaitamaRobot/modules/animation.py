@@ -5,7 +5,7 @@ from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 from SaitamaRobot.modules.helper_funcs.chat_status import user_admin
 from telegram import Update
 from telegram.ext import CallbackContext, run_async
-from SaitamaRobot.modules.helper_funcs.alternate import typing_action
+#from SaitamaRobot.modules.helper_funcs.alternate import typing_action
 #sleep how many times after each edit in 'police'
 EDIT_SLEEP = 2
 #edit how many times in 'police'
@@ -231,7 +231,7 @@ earth_ani = [
 
 #@user_admin
 @run_async
-@typing_action
+#@typing_action
 def blockanimation(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     msg = update.effective_message.reply_text('⬜') 
@@ -245,7 +245,7 @@ def blockanimation(update: Update, context: CallbackContext):
 
 #@user_admin
 @run_async
-@typing_action
+#@typing_action
 def clockanimation(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     msg = update.effective_message
@@ -259,7 +259,7 @@ def clockanimation(update: Update, context: CallbackContext):
 
 #@user_admin
 @run_async
-@typing_action
+#@typing_action
 def earthanimation(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     msg = update.effective_message
@@ -274,7 +274,7 @@ def earthanimation(update: Update, context: CallbackContext):
 
 #@user_admin
 @run_async
-@typing_action
+#@typing_action
 def moonanimation(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     msg = update.effective_message.reply_text('🌚') 
@@ -293,7 +293,7 @@ def moonanimation(update: Update, context: CallbackContext):
 
 #@user_admin
 @run_async
-@typing_action
+#@typing_action
 def bombs(update: Update, context: CallbackContext):
     bot,args = context.bot, context.args
     msg = update.effective_message.reply_text('💣') 
@@ -314,7 +314,7 @@ def bombs(update: Update, context: CallbackContext):
 
 #@user_admin
 @run_async
-@typing_action
+#@typing_action
 def hack(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     msg = update.effective_message.reply_text('Target selected') 
@@ -332,7 +332,7 @@ def hack(update: Update, context: CallbackContext):
 
 #@user_admin
 @run_async
-@typing_action
+#@typing_action
 def love(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     msg = update.effective_message.reply_text('❣️') 
@@ -346,7 +346,7 @@ def love(update: Update, context: CallbackContext):
 
 #@user_admin
 @run_async
-@typing_action
+#@typing_action
 def kill(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     msg = update.effective_message.reply_text('🔫') 
