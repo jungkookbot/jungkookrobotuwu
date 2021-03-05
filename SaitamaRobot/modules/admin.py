@@ -4,6 +4,7 @@ from telegram import ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
+from SaitamaRobot.modules.helper_funcs.alternate import typing_action
 
 from SaitamaRobot import DRAGONS, dispatcher
 from SaitamaRobot.modules.disable import DisableAbleCommandHandler
@@ -35,6 +36,7 @@ from SaitamaRobot.modules.helper_funcs.extraction import extract_user, extract_u
 @can_promote
 @user_admin
 @loggable
+@typing_action
 def promote(update: Update, context: CallbackContext) -> str:
     bot = context.bot
     args = context.args
@@ -117,6 +119,7 @@ def promote(update: Update, context: CallbackContext) -> str:
 @can_promote
 @user_admin
 @loggable
+@typing_action
 def demote(update: Update, context: CallbackContext) -> str:
     bot = context.bot
     args = context.args
@@ -189,6 +192,7 @@ def demote(update: Update, context: CallbackContext) -> str:
 @bot_admin
 @can_promote
 @user_admin
+@typing_action
 def set_title(update: Update, context: CallbackContext):
     bot = context.bot
     args = context.args
@@ -253,6 +257,7 @@ def set_title(update: Update, context: CallbackContext):
 @can_pin
 @user_admin
 @loggable
+@typing_action
 def pin(update: Update, context: CallbackContext) -> str:
     bot = context.bot
     args = context.args
@@ -293,6 +298,7 @@ def pin(update: Update, context: CallbackContext) -> str:
 @can_pin
 @user_admin
 @loggable
+@typing_action
 def unpin(update: Update, context: CallbackContext) -> str:
     bot = context.bot
     chat = update.effective_chat
@@ -318,6 +324,7 @@ def unpin(update: Update, context: CallbackContext) -> str:
 @bot_admin
 @user_admin
 @connection_status
+@typing_action
 def invite(update: Update, context: CallbackContext):
     bot = context.bot
     chat = update.effective_chat
@@ -341,6 +348,7 @@ def invite(update: Update, context: CallbackContext):
 
 @run_async
 @connection_status
+@typing_action
 def adminlist(update, context):
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
@@ -452,6 +460,7 @@ def adminlist(update, context):
 @run_async
 @bot_admin
 @user_admin
+@typing_action
 def setchatpic(update, context):
     chat = update.effective_chat
     msg = update.effective_message
@@ -488,6 +497,7 @@ def setchatpic(update, context):
 @run_async
 @bot_admin
 @user_admin
+@typing_action
 def rmchatpic(update, context):
     chat = update.effective_chat
     msg = update.effective_message
@@ -507,6 +517,7 @@ def rmchatpic(update, context):
 @run_async
 @bot_admin
 @user_admin
+@typing_action
 def setchat_title(update, context):
     chat = update.effective_chat
     msg = update.effective_message
@@ -535,6 +546,7 @@ def setchat_title(update, context):
 @run_async
 @bot_admin
 @user_admin
+@typing_action
 def set_sticker(update, context):
     msg = update.effective_message
     chat = update.effective_chat
@@ -567,6 +579,7 @@ def set_sticker(update, context):
 @run_async
 @bot_admin
 @user_admin
+@typing_action
 def set_desc(update, context):
     msg = update.effective_message
     chat = update.effective_chat
