@@ -20,33 +20,23 @@ PHOTO = 'https://telegra.ph/file/0d782f9dbd329e51a3cc5.jpg'
 def runs(update: Update, context: CallbackContext):
     update.effective_message.reply_text(random.choice(fun_strings.RUN_STRINGS))
 
-
-@run_async
-def igris(update: Update, context: CallbackContext):
-    update.effective_message.reply_text(random.choice(fun_strings.IGRIS_STRINGS))
                                                 
-@run_async
-def arise(update: Update, context: CallbackContext):
-    message = update.effective_message
-    name = message.reply_to_message.from_user.first_name if message.reply_to_message else message.from_user.first_name
-    reply_photo = message.reply_to_message.reply_photo if message.reply_to_message else message.reply_photo
-    reply_photo(
-        random.choice(fun_strings.IGRIS_IMG), caption=f'*Command Me {name}*')
-     
-
 @run_async
 def truth(update: Update, context: CallbackContext):
     update.effective_message.reply_text(random.choice(fun_strings.TRUTH_STRINGS))
-
+    
+    
 @run_async
 def insult(update: Update, _):
     msg = update.effective_message
     reply_text = msg.reply_to_message.reply_text if msg.reply_to_message else msg.reply_text
     reply_text(random.choice(fun_strings.INSULT_STRINGS))
 
+    
 @run_async
 def dare(update: Update, context: CallbackContext):
     update.effective_message.reply_text(random.choice(fun_strings.DARE_STRINGS))
+    
     
 @run_async
 def sanitize(update: Update, context: CallbackContext):
@@ -235,8 +225,6 @@ __help__ = """
 """
 
 INSULT_HANDLER = DisableAbleCommandHandler("insult", insult)
-ARISE_HANDLER = DisableAbleCommandHandler("arise", arise)                                      
-IGRIS_HANDLER = DisableAbleCommandHandler("igris", igris)
 TRUTH_HANDLER = DisableAbleCommandHandler("truth", truth)
 DARE_HANDLER = DisableAbleCommandHandler("dare", dare)
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize)
@@ -252,8 +240,6 @@ DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
 TABLE_HANDLER = DisableAbleCommandHandler("table", table)
 
 dispatcher.add_handler(INSULT_HANDLER)
-dispatcher.add_handler(ARISE_HANDLER)                                          
-dispatcher.add_handler(IGRIS_HANDLER)
 dispatcher.add_handler(TRUTH_HANDLER)
 dispatcher.add_handler(DARE_HANDLER)
 dispatcher.add_handler(SANITIZE_HANDLER)
@@ -274,7 +260,7 @@ __command_list__ = [
     "table", "pat", "sanitize"
 ]
 __handlers__ = [
-    RUNS_HANDLER,IGRIS_HANDLER,ARISE_HANDLER,TRUTH_HANDLER, DARE_HANDLER, SLAP_HANDLER, PAT_HANDLER, ROLL_HANDLER, TOSS_HANDLER,
+    RUNS_HANDLER,TRUTH_HANDLER, DARE_HANDLER, SLAP_HANDLER, PAT_HANDLER, ROLL_HANDLER, TOSS_HANDLER,
     SHRUG_HANDLER, BLUETEXT_HANDLER, RLG_HANDLER, DECIDE_HANDLER, TABLE_HANDLER,INSULT_HANDLER, 
     SANITIZE_HANDLER
 ]
