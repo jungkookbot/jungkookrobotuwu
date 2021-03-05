@@ -14,7 +14,7 @@ from SaitamaRobot.modules.helper_funcs.alternate import typing_action
 @loggable
 @user_admin
 @run_async
-@typing_action
+#@typing_action
 def approve(update, context):
     message = update.effective_message
     chat_title = message.chat.title
@@ -57,7 +57,7 @@ def approve(update, context):
 @loggable
 @user_admin
 @run_async
-@typing_action
+#@typing_action
 def disapprove(update, context):
     message = update.effective_message
     chat_title = message.chat.title
@@ -93,7 +93,7 @@ def disapprove(update, context):
     return log_message
 @user_admin
 @run_async
-@typing_action                           
+#@typing_action                           
 def approved(update, context):
     message = update.effective_message
     chat_title = message.chat.title
@@ -110,7 +110,7 @@ def approved(update, context):
         message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
 @user_admin
 @run_async
-@typing_action
+#@typing_action
 def approval(update, context):
     message = update.effective_message
     chat = update.effective_chat
@@ -131,7 +131,7 @@ def approval(update, context):
             f"{member.user['first_name']} is not an approved user. They are affected by normal commands."
         )
 @run_async
-@typing_action
+#@typing_action
 def unapproveall(update: Update, context: CallbackContext):
     chat = update.effective_chat
     user = update.effective_user
