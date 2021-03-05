@@ -1,19 +1,22 @@
-
 import random
 
 from SaitamaRobot import dispatcher
 from SaitamaRobot.modules.disable import (DisableAbleCommandHandler)
 from SaitamaRobot.modules.sql import afk_sql as sql
 from SaitamaRobot.modules.users import get_user_id
+from SaitamaRobot.modules.helper_funcs.alternate import typing_action
+
 from telegram import MessageEntity, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, Filters, MessageHandler, run_async
+
 
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
 
 
 @run_async
+@typing_action
 def afk(update: Update, context: CallbackContext):
     args = update.effective_message.text.split(None, 1)
     notice = ""
@@ -57,6 +60,7 @@ def no_longer_afk(update: Update, context: CallbackContext):
 
 
 @run_async
+@typing_action
 def reply_afk(update: Update, context: CallbackContext):
     bot = context.bot
     message = update.effective_message
