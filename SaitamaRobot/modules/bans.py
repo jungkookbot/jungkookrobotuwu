@@ -23,7 +23,7 @@ from SaitamaRobot.modules.helper_funcs.alternate import typing_action
 @user_admin
 @user_can_ban
 @loggable
-@typing_action
+#@typing_action
 def ban(update: Update, context: CallbackContext) -> str:
     chat = update.effective_chat
     user = update.effective_user
@@ -121,7 +121,7 @@ def ban(update: Update, context: CallbackContext) -> str:
 @user_admin
 @user_can_ban
 @loggable
-@typing_action
+#@typing_action
 def temp_ban(update: Update, context: CallbackContext) -> str:
     chat = update.effective_chat
     user = update.effective_user
@@ -209,7 +209,7 @@ def temp_ban(update: Update, context: CallbackContext) -> str:
 @user_admin
 @user_can_ban
 @loggable
-@typing_action
+#@typing_action
 def punch(update: Update, context: CallbackContext) -> str:
     chat = update.effective_chat
     user = update.effective_user
@@ -266,7 +266,7 @@ def punch(update: Update, context: CallbackContext) -> str:
 @run_async
 @bot_admin
 @can_restrict
-@typing_action
+#@typing_action
 def punchme(update: Update, context: CallbackContext):
     user_id = update.effective_message.from_user.id
     if is_user_admin(update.effective_chat, user_id):
@@ -339,7 +339,7 @@ def unban(update: Update, context: CallbackContext) -> str:
 @bot_admin
 @can_restrict
 @gloggable
-@typing_action
+#@typing_action
 def selfunban(context: CallbackContext, update: Update) -> str:
     message = update.effective_message
     user = update.effective_user
@@ -383,7 +383,7 @@ def selfunban(context: CallbackContext, update: Update) -> str:
 @bot_admin
 @can_restrict
 @loggable
-@typing_action
+#@typing_action
 def banme(update, context):
     user_id = update.effective_message.from_user.id
     chat = update.effective_chat
@@ -413,7 +413,7 @@ def banme(update, context):
 @can_restrict
 @user_admin
 @loggable
-@typing_action
+#@typing_action
 def dkick(update, context):
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
@@ -496,7 +496,7 @@ def dkick(update, context):
 @can_restrict
 @user_admin
 @loggable
-@typing_action
+#@typing_action
 def dban(update, context):
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
