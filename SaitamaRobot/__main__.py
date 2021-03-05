@@ -80,7 +80,7 @@ And the following:
 SAITAMA_IMG = "https://telegra.ph/file/e596740130559f9e50855.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project by contacting @DrunkenMonkeyX. Supporting isnt always financial!  Those who cannot provide monetary support are welcome to help us develop the bot at @JungkookSupportGroup."""
+ You can support the project by contacting @NameHiddenz. Supporting isnt always financial!  Those who cannot provide monetary support are welcome to help us develop the bot at @JungkookSupportGroup."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -194,7 +194,7 @@ def start(update: Update, context: CallbackContext):
                           [
                               InlineKeyboardButton(
                               text="👀 Help", 
-                              callback_data="help_back")
+                              url="https://t.me/jungkookrobot?start=help")
                           ]])) 
                               
     else:
