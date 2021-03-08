@@ -22,7 +22,6 @@ from telegram.utils.helpers import mention_html, mention_markdown
 from SaitamaRobot.modules.helper_funcs.alternate import typing_action
 
 @run_async
-@typing_action
 def blackliststicker(update: Update, context: CallbackContext):
     msg = update.effective_message  # type: Optional[Message]
     chat = update.effective_chat  # type: Optional[Chat]
@@ -66,7 +65,7 @@ def blackliststicker(update: Update, context: CallbackContext):
 
 @run_async
 @user_admin
-@typing_action
+
 def add_blackliststicker(update: Update, context: CallbackContext):
     bot = context.bot
     msg = update.effective_message  # type: Optional[Message]
@@ -149,7 +148,7 @@ def add_blackliststicker(update: Update, context: CallbackContext):
 
 @run_async
 @user_admin
-@typing_action
+
 def unblackliststicker(update: Update, context: CallbackContext):
     bot = context.bot
     msg = update.effective_message  # type: Optional[Message]
@@ -239,7 +238,7 @@ def unblackliststicker(update: Update, context: CallbackContext):
 @run_async
 @loggable
 @user_admin
-@typing_action
+
 def blacklist_mode(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
@@ -344,7 +343,7 @@ def blacklist_mode(update: Update, context: CallbackContext):
 
 @run_async
 @user_not_admin
-@typing_action
+
 def del_blackliststicker(update: Update, context: CallbackContext):
     bot = context.bot
     chat = update.effective_chat  # type: Optional[Chat]
