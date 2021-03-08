@@ -289,7 +289,7 @@ def punchme(update: Update, context: CallbackContext):
 @user_admin
 @user_can_ban
 @loggable
-@typing_action
+#@typing_action
 def unban(update: Update, context: CallbackContext) -> str:
     message = update.effective_message
     user = update.effective_user
