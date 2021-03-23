@@ -13,7 +13,7 @@ from SaitamaRobot.modules.helper_funcs.chat_status import (is_user_admin)
 from SaitamaRobot.modules.helper_funcs.extraction import extract_user
 
 @run_async
-def animequotes(update: Update, context: CallbackContext):
+def aq(update: Update, context: CallbackContext):
     message = update.effective_message
     name = message.reply_to_message.from_user.first_name if message.reply_to_message else message.from_user.first_name
     reply_photo = message.reply_to_message.reply_photo if message.reply_to_message else message.reply_photo
@@ -21,17 +21,17 @@ def animequotes(update: Update, context: CallbackContext):
         random.choice(animequotes_strings.QUOTES_IMG))
 
 __help__ = """
- • `/animequotes`*:* gives random anime quotes
+ • `/aq`*:* gives random anime quotes
  
 """
-ANIMEQUOTES_HANDLER = DisableAbleCommandHandler("animequotes", animequotes)
+AQ_HANDLER = DisableAbleCommandHandler("aq", aq)
 
-dispatcher.add_handler(ANIMEQUOTES_HANDLER)
+dispatcher.add_handler(AQ_HANDLER)
 
 __mod_name__ = "AnimeQuotes"
 __command_list__ = [
-    "animequotes"
+    "aq"
 ]
 __handlers__ = [
-    ANIMEQUOTES_HANDLER
+    AQ_HANDLER
 ]
