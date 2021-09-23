@@ -48,6 +48,6 @@ pybase64
 pySmartDL
 validators
 youtube_dl
-google_trans_new
+google_trans_new==1.1.9
 #googletrans
 youtube-search-python==1.4.6
